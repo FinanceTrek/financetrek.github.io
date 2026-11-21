@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ФинансТрек — учёт расходов, который не следит за вами</title>
+<meta name="description" content="Записывайте траты в пару касаний и смотрите, куда уходят деньги. Без рекламы и регистрации — всё хранится только на вашем телефоне и на вашем Яндекс Диске.">
+<meta name="theme-color" content="#0c0f14">
+<!-- Карточка ссылки в мессенджерах -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ФинансТрек — учёт расходов, который не следит за вами">
+<meta property="og:description" content="Без рекламы и регистрации. Ваши траты хранятся только у вас — даже разработчик их не видит.">
+<meta property="og:image" content="https://financetrek.github.io/icon.png">
+<meta property="og:url" content="https://financetrek.github.io/">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('ft-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="./">
+      <img src="icon.png" alt="" width="34" height="34">
+      <span>ФинансТрек</span>
+    </a>
+
+    <nav class="topnav" aria-label="Разделы страницы">
+      <a href="#features">Возможности</a>
+      <a href="#screens">Экраны</a>
+      <a href="#privacy">Приватность</a>
+      <a href="#pricing">Что бесплатно</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" type="button" id="theme-toggle" aria-label="Переключить тему" title="Сменить тему">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <button class="btn primary btn-sm" type="button" data-open-dialog>Попробовать</button>
+    </div>
+  </div>
+</header>
+
+<main class="landing">
+
+  <!-- 1. Первый экран -->
+  <section class="hero container">
+    <div class="hero-text">
+      <div class="eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Android · Готовится к выходу</span>
+      </div>
+
+      <h1>Учёт расходов, который <span class="gradient-text">не&nbsp;следит</span> за&nbsp;вами</h1>
+
+      <p class="lead">
+        Записывайте траты в пару касаний и смотрите, куда уходят деньги.
+        Всё хранится только на вашем телефоне и на вашем Яндекс Диске —
+        даже разработчик ничего не видит.
+      </p>
+
+      <div class="actions">
+        <button class="btn primary" type="button" data-open-dialog>
+          <span>Хочу попробовать первым</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        <a class="btn ghost" href="#privacy">Как защищены данные</a>
+      </div>
+
+      <p class="cue">Основные возможности бесплатно · Есть подписка Plus · Без рекламы · Android</p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="phone phone-hero">
+        <img src="img/overview.jpg" alt="Главный экран ФинансТрек: общий капитал, счета, цель «Машина», долги и статус резервной копии" width="1216" height="2640">
+      </div>
+
+      <div class="float-badge float-top" aria-hidden="true">
+        <span class="float-icon mint">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+        </span>
+        <div>
+          <strong>Траты не уходят на сервер</strong>
+          <span>Работает и без интернета</span>
+        </div>
+      </div>
+
+      <div class="float-badge float-bottom" aria-hidden="true">
+        <span class="float-icon blue">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+          </svg>
+        </span>
+        <div>
+          <strong>Копия на Яндекс Диске</strong>
+          <span>В папке приложения на вашем Диске</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Полоса доверия -->
+  <section class="trust-wrap container" aria-label="Принципы приложения">
+    <ul class="trust">
+      <li>
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+        <span>Без рекламы</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+        <span>Без регистрации</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+        <span>Не просит контакты и местоположение</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+        <span>Разработчик не видит ваших данных</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 3. Проблема → решение -->
+  <section class="section container">
+    <div class="section-head">
+      <p class="kicker">Зачем ещё один трекер</p>
+      <h2 class="section-title">Знаете, сколько ушло на кафе в этом месяце?</h2>
+      <p class="section-sub">Учёт обычно бросают, когда он отнимает слишком много времени или сил. Мы сделали так, чтобы он не отнимал.</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card muted-card">
+        <div class="compare-label bad">Почему учёт бросают</div>
+        <ul class="cross-list">
+          <li>Каждую трату долго вносить — и через неделю это надоедает</li>
+          <li>Нужно где-то регистрироваться, прежде чем начать</li>
+          <li>Непонятно, кто ещё видит ваши траты</li>
+        </ul>
+      </div>
+
+      <div class="compare-card highlight-card">
+        <div class="compare-label good">ФинансТрек</div>
+        <ul class="checks">
+          <li>Запись траты занимает секунды — прямо с калькулятором в клавиатуре</li>
+          <li>Работает без интернета, без аккаунта и без сбора статистики</li>
+          <li>История остаётся вашим личным делом на устройстве и в вашем Диске</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Выгоды -->
+  <section class="section container" id="features">
+    <div class="section-head">
+      <p class="kicker">Что это даёт вам</p>
+      <h2 class="section-title">Всё нужное для порядка в деньгах</h2>
+    </div>
+
+    <div class="grid">
+      <article class="feature">
+        <div class="feat-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h3>Никто не узнает, сколько вы тратите</h3>
+        <p>Даже мы. Записи хранятся на вашем телефоне, копии — на вашем собственном Яндекс Диске.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feat-icon mint" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            <path d="m9 15 2 2 4-4"></path>
+          </svg>
+        </div>
+        <h3>Потеряли телефон — не потеряли историю</h3>
+        <p>Сохраните копию на Яндекс Диск, и на новом телефоне всё вернётся за пару нажатий.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feat-icon purple" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <h3>Открыли, записали, закрыли</h3>
+        <p>Никаких баннеров и роликов. Сумма, категория — готово. А с виджета на рабочем столе — даже не открывая приложение.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feat-icon coral" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+        <h3>Перерасход — до конца месяца, а не после</h3>
+        <p>Задайте лимит на кафе или продукты — приложение предупредит, когда потрачено 80%.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feat-icon amber" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path>
+            <path d="M8 7h8M8 11h8M8 15h5"></path>
+          </svg>
+        </div>
+        <h3>Чек к покупке всегда под рукой</h3>
+        <p>Сфотографируйте чек к операции — пригодится для гарантии или возврата. 10 фото бесплатно.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feat-icon teal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+        </div>
+        <h3>Михалыч не забудет вернуть долг</h3>
+        <p>Запишите, кто сколько должен, — напомним за день до срока. Цели накоплений тоже есть: например, на машину.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. Витрина экранов -->
+  <section class="showcase-band" id="screens">
+    <div class="container">
+      <div class="section-head center">
+        <p class="kicker">Как это выглядит</p>
+        <h2 class="section-title">Спокойный интерфейс без визуального шума</h2>
+        <p class="section-sub">Реальные скриншоты из приложения: без лишних экранов, перегруженных графиков и рекламных блоков.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="screen-card">
+          <div class="phone phone-gallery">
+            <img src="img/overview.jpg" alt="Главный экран: общий капитал, счета, цель «Машина», долги" width="1216" height="2640" loading="lazy">
+          </div>
+          <figcaption>
+            <span class="step-tag">01 · Обзор</span>
+            <strong>Всё главное на одном экране</strong>
+            <p>Общий капитал, баланс по счетам, прогресс целей, долги и статус резервной копии.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="screen-card">
+          <div class="phone phone-gallery">
+            <img src="img/add.jpg" alt="Окно добавления расхода: сумма, категории и клавиатура-калькулятор" width="1216" height="2640" loading="lazy">
+          </div>
+          <figcaption>
+            <span class="step-tag">02 · Быстрый ввод</span>
+            <strong>Сумма, категория — готово</strong>
+            <p>Встроенный калькулятор и переводы между счетами. В Plus — ещё и сканер QR-кода кассового чека.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="screen-card">
+          <div class="phone phone-gallery">
+            <img src="img/structure.jpg" alt="Структура расходов за месяц: круговая диаграмма по категориям" width="1216" height="2640" loading="lazy">
+          </div>
+          <figcaption>
+            <span class="step-tag">03 · Аналитика</span>
+            <strong>Видно, куда уходят деньги</strong>
+            <p>Структура и динамика по месяцам, фильтр по счетам и средний расход в день.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Как устроена приватность -->
+  <section class="section container" id="privacy">
+    <div class="privacy-box">
+      <div class="section-head">
+        <p class="kicker">Приватность по архитектуре</p>
+        <h2 class="section-title">Как защищены ваши данные</h2>
+        <p class="section-sub">Мы не обещаем «не смотреть в базу» — у нас просто нет сервера, на который уходят ваши финансы.</p>
+      </div>
+
+      <div class="scheme" aria-label="Схема: данные хранятся на телефоне и на вашем Яндекс Диске, разработчик к ним доступа не имеет">
+        <div class="node you">
+          <div class="node-icon blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <strong>Ваш телефон</strong>
+          <span>Основная база, фото чеков, код и отпечаток</span>
+        </div>
+
+        <div class="scheme-link" aria-hidden="true">
+          <span class="scheme-pill">⇄ Копия по запросу</span>
+        </div>
+
+        <div class="node you">
+          <div class="node-icon mint" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+          </div>
+          <strong>Ваш Яндекс Диск</strong>
+          <span>Папка приложения — доступ только у вас</span>
+        </div>
+
+        <div class="scheme-divider" aria-hidden="true"></div>
+
+        <div class="node away">
+          <div class="node-icon muted-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+            </svg>
+          </div>
+          <strong>Разработчик</strong>
+          <span>Сервера нет · доступа к данным нет</span>
+        </div>
+      </div>
+
+      <div class="privacy-footer">
+        <ul class="checks two-col">
+          <li>Нет нашего сервера с вашими данными — хранить их просто негде.</li>
+          <li>Копия на Яндекс Диске лежит в папке «Приложения → ФинансТрек» вашего Диска. Приложению доступна только эта папка, разработчику — ничего. Серверы Яндекса — в России.</li>
+          <li>Вход в приложение можно защитить кодом и отпечатком пальца.</li>
+          <li>Подробно — в <a href="privacy.html">политике конфиденциальности</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Что бесплатно / Plus -->
+  <section class="section container" id="pricing">
+    <div class="section-head">
+      <p class="kicker">Честная модель</p>
+      <h2 class="section-title">Что бесплатно</h2>
+      <p class="section-sub">Базовая версия подходит для полноценного ежедневного учёта и не показывает рекламу.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card price-free">
+        <div class="price-head">
+          <div>
+            <span class="badge-free">Без рекламы</span>
+            <h3>Базовый</h3>
+          </div>
+          <div class="price-value">0 ₽</div>
+        </div>
+        <ul class="checks">
+          <li>2 рабочих счёта в любых валютах</li>
+          <li>Расходы, доходы, переводы и отчёты по месяцам</li>
+          <li>Лимиты по категориям, 1 цель накоплений, 1 автоплатёж</li>
+          <li>Учёт долгов — без ограничений</li>
+          <li>10 фото чеков</li>
+          <li>Копии на Яндекс Диск, экспорт и перенос истории из файла</li>
+          <li>Виджет на рабочий стол, код и отпечаток</li>
+        </ul>
+      </div>
+
+      <div class="price-card price-plus">
+        <div class="price-head">
+          <div>
+            <span class="badge-soon">Скоро</span>
+            <h3>ФинансТрек Plus</h3>
+          </div>
+          <div class="price-value muted-price">Подписка</div>
+        </div>
+        <p class="price-desc">Для тех, кому нужно больше масштаба и автоматизации. На эти деньги приложение и развивается.</p>
+        <ul class="checks soft-checks">
+          <li>Больше счетов и целей накоплений</li>
+          <li>Автоматическая копия на Яндекс Диск каждый день</li>
+          <li>Отчёты и аналитика за любой произвольный период</li>
+          <li>Другие расширенные возможности</li>
+        </ul>
+        <p class="muted price-note">Подписка пока не продаётся — подробные условия опубликуем до запуска.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Вопросы -->
+  <section class="section container" id="faq">
+    <div class="section-head">
+      <p class="kicker">Вопросы</p>
+      <h2 class="section-title">Частые вопросы</h2>
+    </div>
+
+    <div class="faq-list">
+      <details>
+        <summary>А если я потеряю телефон?</summary>
+        <p>Сохраните копию на Яндекс Диск — это бесплатно и делается одной кнопкой в приложении. На новом телефоне войдите через тот же Яндекс ID и восстановите копию. В Plus копия сохраняется сама каждый день.</p>
+      </details>
+      <details>
+        <summary>Что бесплатно, а что платно?</summary>
+        <p>Основные возможности бесплатны и без рекламы. Платная подписка Plus — для тех, кому нужно больше: больше счетов и целей, автоматическая копия, отчёты за любой период и другое. На эти деньги приложение и развивается.</p>
+      </details>
+      <details>
+        <summary>Нужен ли интернет?</summary>
+        <p>Нет, приложение работает без интернета. Он нужен только для копий на Яндекс Диске.</p>
+      </details>
+      <details>
+        <summary>Можно перенести историю из другого приложения?</summary>
+        <p>Да, если ваше приложение умеет выгружать операции в файл CSV. Подходят не все приложения — после переноса сверьте балансы счетов. Перед переносом ФинансТрек сам сохраняет страховочную копию.</p>
+      </details>
+      <details>
+        <summary>Есть версия для iPhone или компьютера?</summary>
+        <p>Пока только Android. В планах — без сроков — версия для компьютера, чтобы смотреть свои данные в браузере, и приложение для iPhone.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 9. Финальный призыв -->
+  <section class="section container">
+    <div class="final">
+      <div class="final-glow" aria-hidden="true"></div>
+      <img class="final-icon" src="icon.png" alt="" width="56" height="56">
+      <h2>Учёт, который не следит за вами</h2>
+      <p>Приложение готовится к выходу. Хотите попробовать одним из первых?</p>
+      <button class="btn primary" type="button" data-open-dialog>Хочу попробовать первым</button>
+      <p class="cue">Основные возможности бесплатно · Есть подписка Plus · Без рекламы · Android</p>
+    </div>
+  </section>
+
+  <footer class="container site-footer">
+    <a class="footer-brand" href="./">
+      <img src="icon.png" alt="" width="24" height="24">
+      <span>ФинансТрек</span>
+    </a>
+    <nav class="docs" aria-label="Документы и контакты">
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="terms.html">Условия использования</a>
+      <a href="mailto:financetrek.help@yandex.ru">Поддержка</a>
+    </nav>
+  </footer>
+</main>
+
+<!-- Окно «в разработке» -->
+<dialog id="soon">
+  <div class="dialog-head">
+    <h2>Приложение ещё в разработке</h2>
+    <button class="icon-btn" type="button" data-close-dialog aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <p>ФинансТрек пока не вышел в магазины. Скоро мы начнём искать людей, которые попробуют его первыми и подскажут, что улучшить.</p>
+  <p><b>Набор тестировщиков откроется скоро.</b> Загляните сюда чуть позже — здесь появится способ записаться. Понадобится телефон на Android.</p>
+
+  <div class="actions dialog-actions">
+    <button class="btn primary" type="button" data-close-dialog>Понятно</button>
+  </div>
+</dialog>
+
+<dialog id="viewer" class="viewer" aria-label="Просмотр экрана">
+  <button class="icon-btn viewer-close" type="button" data-close-viewer aria-label="Закрыть">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+  <button class="icon-btn viewer-nav viewer-prev" type="button" aria-label="Предыдущий экран">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+  </button>
+  <figure class="viewer-figure">
+    <img id="viewer-img" src="" alt="">
+    <figcaption id="viewer-caption"></figcaption>
+  </figure>
+  <button class="icon-btn viewer-nav viewer-next" type="button" aria-label="Следующий экран">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+  </button>
+</dialog>
+
+<script>
+  (function () {
+    var dialog = document.getElementById('soon');
+    document.querySelectorAll('[data-open-dialog]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (dialog.showModal) dialog.showModal();
+
+      });
+    });
+    dialog.querySelectorAll('[data-close-dialog]').forEach(function (btn) {
+      btn.addEventListener('click', function () { dialog.close(); });
+    });
+    dialog.addEventListener('click', function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+
+
+    // Просмотр скриншотов галереи крупно: нажатие на экран, листание
+    // стрелками (на экране и на клавиатуре) и смахиванием, Esc — закрыть.
+    var viewer = document.getElementById('viewer');
+    var shots = Array.prototype.slice.call(document.querySelectorAll('.phone-gallery img'));
+    if (viewer && viewer.showModal && shots.length) {
+      var vImg = document.getElementById('viewer-img');
+      var vCap = document.getElementById('viewer-caption');
+      var index = 0;
+      var show = function (i) {
+        index = (i + shots.length) % shots.length;
+        var s = shots[index];
+        vImg.src = s.currentSrc || s.src;
+        vImg.alt = s.alt;
+        var fig = s.closest('figure');
+        var title = fig && fig.querySelector('figcaption strong');
+        vCap.textContent = (index + 1) + ' из ' + shots.length + (title ? ' · ' + title.textContent : '');
+      };
+      shots.forEach(function (s, i) {
+        s.setAttribute('tabindex', '0');
+        s.setAttribute('role', 'button');
+        s.setAttribute('aria-label', 'Открыть крупно: ' + s.alt);
+        var open = function () { show(i); viewer.showModal(); };
+        s.addEventListener('click', open);
+        s.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+      viewer.querySelector('.viewer-prev').addEventListener('click', function () { show(index - 1); });
+      viewer.querySelector('.viewer-next').addEventListener('click', function () { show(index + 1); });
+      viewer.querySelector('[data-close-viewer]').addEventListener('click', function () { viewer.close(); });
+      viewer.addEventListener('click', function (e) { if (e.target === viewer) viewer.close(); });
+      viewer.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') show(index - 1);
+        if (e.key === 'ArrowRight') show(index + 1);
+      });
+      var startX = null;
+      viewer.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+      viewer.addEventListener('touchend', function (e) {
+        if (startX === null) return;
+        var dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+    }
+    // Цвет шапки мобильного браузера — как фон страницы в текущей теме.
+    var syncThemeColor = function () {
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', getComputedStyle(document.body).backgroundColor);
+    };
+    syncThemeColor();
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) mq.addEventListener('change', syncThemeColor);
+    }
+
+    var themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function () {
+        var root = document.documentElement;
+        var current = root.getAttribute('data-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var isDark = current ? current === 'dark' : prefersDark;
+        var next = isDark ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('ft-theme', next); } catch (e) {}
+        syncThemeColor();
+      });
+    }
+  })();
+</script>
+</body>
+</html>
